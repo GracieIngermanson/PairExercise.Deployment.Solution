@@ -8,7 +8,7 @@ const client = new Sequelize(dbUrl, {
   dialect: "postgres",
   protocol: "postgres",
   ssl: true,
-  dialectOptions: { ssl: true },
+  dialectOptions: { ssl: { require: true, rejectUnauthorized: false } },
 });
 
 module.exports = client;
